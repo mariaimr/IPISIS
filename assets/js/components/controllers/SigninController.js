@@ -30,7 +30,6 @@ function ($scope, $state, AuthService, ROLES) {
 			password: contrasena
 		};
 		$scope.signing = true;
-
 		//Llamado al servicio de signin.
 		AuthService.signinUsuario(credenciales)
 		.then(function(res) {

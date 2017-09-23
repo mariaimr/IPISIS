@@ -35,10 +35,11 @@ function _onJwtStrategyAuth(payload, next) {
 
 var LDAP_STRATEGY_CONFIG = {
   server: {
-    url: '192.168.194.110/phpldapadmin',
-    //url: 'ldap://localhost/',
+    //url: '192.168.194.110',
+    //url: '192.168.194.110/phpldapadmin',
+    url: 'ldap://192.168.194.110/',
     bindDn: 'cn=admin,dc=udea,dc=edu,dc=co',
-    bindCredentials: 'integrador2017', //Averiguar que es
+    bindCredentials: '123', //ldap-password
     searchBase: 'ou=Usuarios,dc=udea,dc=edu,dc=co',
     searchFilter: '(uid={{username}})'
   },
@@ -50,6 +51,7 @@ var LDAP_STRATEGY_CONFIG = {
 
 function _onLdapStrategy(estudiante, next) {
   var username;
+  console.log(estudiante);
   if (!estudiante) {
     return next(null, false, {message: 'No se encontro el usuario.'});
   }
@@ -58,6 +60,7 @@ function _onLdapStrategy(estudiante, next) {
     identificacion: estudiante.uidNumber,
     rol: estudiante.gidNumber
   };
+  //console.log(username);
   return next(null, username, {message: 'Identificado correctamente.'})
 };
 
