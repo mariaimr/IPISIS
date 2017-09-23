@@ -3,7 +3,6 @@ Pre-requisitos
 
     Instalar npm
     $ npm install -g sails
-    $ npm install -g grunt-cli
     $ npm install -g bower
 
 Instalación
