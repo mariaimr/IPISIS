@@ -35,10 +35,10 @@ function _onJwtStrategyAuth(payload, next) {
 
 var LDAP_STRATEGY_CONFIG = {
   server: {
-    // url: 'ldap://192.168.194.110/',
-    url: 'ldap://localhost/',
+    url: '192.168.194.110/phpldapadmin',
+    //url: 'ldap://localhost/',
     bindDn: 'cn=admin,dc=udea,dc=edu,dc=co',
-    bindCredentials: 'integrador2017',
+    bindCredentials: 'integrador2017', //Averiguar que es
     searchBase: 'ou=Usuarios,dc=udea,dc=edu,dc=co',
     searchFilter: '(uid={{username}})'
   },
