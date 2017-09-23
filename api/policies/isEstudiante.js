@@ -11,7 +11,7 @@ module.exports = function (req, res, next) {
     else if (!user) {
       return res.unauthorized();
     }
-    if (user.rol === '1005') {
+    if (user.rol === '1005'||user.rol === '502') {
       req.user = user;
       next();
     } else {
