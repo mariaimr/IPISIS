@@ -50,6 +50,6 @@ angular.module('ipisis')
         data: ideaOfertar
       });
       return oferta;
-    },    
+    },
   }
 }]);

@@ -33,13 +33,12 @@ function _onPassportAuth(req, res, err, user, info) {
     if(rol=='502'){
       rol='1005';
     }
-    console.log(rol);
 		if (rol == '1005') {
-      console.log("----------",rol, "------------------");
-			credencialesEstudiante = {
+ 			  credencialesEstudiante = {
 				identificacion: user.identificacion,
 				nombreUsuario: user.nombreUsuario,
-				nombre: user.nombreUsuario
+				nombre: user.nombreUsuario,
+        correo: user.nombreUsuario+'@udea.edu.co'
 			}
 
 			Estudiante.findOrCreate({where: {nombreUsuario: user.nombreUsuario}, defaults: credencialesEstudiante})
