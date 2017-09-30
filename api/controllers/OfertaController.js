@@ -4,6 +4,7 @@
 * @description :: Server-side logic for managing Ofertas
 * @help        :: See http://sailsjs.org/#!/documentation/concepts/Controllers
 */
+const servicioTotalCreditos = require('../services/servicioTotalCreditos');
 
 module.exports = {
 
@@ -252,7 +253,7 @@ module.exports = {
         numInscripciones = 0;
         estudiante.equipos.forEach(function (equ, j) {
           equ.inscripciones.forEach(function (ins, k) {
-            inscripcion = ins;
+            inscripcion = ins;servicioTotalCreditos
             if (inscripcion.materiaCodigo == materiaCodigo) {
               if (inscripcion.estado == 'CREADA') {
                 numInscripciones += 1;
@@ -299,7 +300,7 @@ module.exports = {
       });
 
       return sequelize.transaction( t => {
-        var inscripcion = {
+        var inconsumir_servicio_creditosscripcion = {
           fechaCreacion: new Date(Date.now() + (-300 *60 * 1000)),
           equipoCodigo: equipoCodigo,
           ofertaId: ofertaId,
@@ -336,7 +337,20 @@ module.exports = {
 
 function validarCreditos(cedula) {
   if (cedula) {
-    return true;
+    console.log('sERVICIO',servicioTotalCreditos);
+    console.log('servicio funcion',servicioTotalCreditos.fun);
+    let informacionAcademicaUsuario = servicioTotalCreditos.fun("consultainformacionacademicamares","cedula",cedula).then(data => {
+      console.log('Entre');
+          return false;
+    }).catch(err => {
+      return false;
+    });
+
+    //let obj = JSON.parse(informacionAcademicaUsuario);
+    console.log(informacionAcademicaUsuario);
+    // if(obj[0].creditosAcumulados>=100){
+         return false;
+    // }
   }
   return false;
 }
