@@ -6,12 +6,13 @@ var passport = require('passport');
 module.exports = function (req, res, next) {
   passport.authenticate('jwt', function (err, user, info) {
     if (err) {
+      console.log(res.serverError());
       return res.serverError();
     }
     else if (!user) {
       return res.unauthorized();
     }
-    if (user.rol === '1005'||user.rol === '502') {
+    if (user.rol === '1005' || user.rol=='502') {
       req.user = user;
       next();
     } else {

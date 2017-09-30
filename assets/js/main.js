@@ -44,7 +44,7 @@ ipisis.constant('ROLES', {
 	JEFE: '505',
 	COMITE: '504',
 	PROFESOR: '503',
-	ESTUDIANTE: '1005'
+	ESTUDIANTE: '1005'||'502'
 });
 
 // filtro para capitalizar la primer letra de una palabra
