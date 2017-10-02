@@ -309,7 +309,7 @@ module.exports = {
         return Inscripcion.create(inscripcion, {transaction: t}).then(resInscripcion => {
           var historial = {
             fechaActualizacion: new Date(Date.now() + (-300 *60 * 1000)),
-            observacion: 'Inscripción creada.',
+            observacion: 'InstotalCreditoscripción creada.',
             estado: 'CREADA',
           }
           return HistorialInscripcion.create(historial, {transaction: t}).then(resHistorial => {
@@ -337,7 +337,7 @@ module.exports = {
 
 function validarCreditos(cedula) {
   if (cedula) {
-    let informacionAcademicaUsuario = servicioTotalCreditos.totalCreditosA("consultainformacionacademicamares","cedula",cedula).then(data => {
+    let informacionAcademicaUsuario = servicioTotalCreditos.totalC("consultainformacionacademicamares","cedula",cedula).then(data => {
       console.log('Entre');
           return false;
     }).catch(err => {
