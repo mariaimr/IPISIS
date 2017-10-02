@@ -54,6 +54,7 @@ function _onLdapStrategy(estudiante, next) {
   if (!estudiante) {
     return next(null, false, {message: 'No se encontro el usuario.'});
   }
+  console.log(estudiante);
   username = {
     nombre: estudiante.givenName + " "+ estudiante.sn,
     nombreUsuario: estudiante.uid,
