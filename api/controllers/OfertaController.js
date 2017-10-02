@@ -339,7 +339,7 @@ function validarCreditos(cedula) {
   if (cedula) {
     console.log("SERVICIO----->", servicioTotalCreditos);
     console.log("SERVICIO----->", servicioTotalCreditos.totalc);
-    let informacionAcademicaUsuario = servicioTotalCreditos.totalC("consultainformacionacademicamares","cedula",cedula).then(data => {
+    let informacionAcademicaUsuario = servicioTotalCreditos("consultainformacionacademicamares","cedula",cedula).then(data => {
       console.log('Entre');
           return false;
     }).catch(err => {

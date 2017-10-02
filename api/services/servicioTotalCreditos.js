@@ -20,7 +20,7 @@
 
 
 
-  module.exports = function totalC(nombre_servicio,parametro_servicio,codigo){
+  module.exports = function(nombre_servicio,parametro_servicio,codigo){
         var OrgSistemasWebServiceClient = java.import("co.edu.udea.wsClient.OrgSistemasWebServiceClient");
         var clientWS = new OrgSistemasWebServiceClient();
         clientWS.addParamSync(parametro_servicio,codigo);
