@@ -34,8 +34,8 @@ function _onPassportAuth(req, res, err, user, info) {
       rol='1005';
     }
     console.log(user.nombre);
-    console.log(user.nombreUsuario);
-    
+    console.log(user);
+
 		if (rol == '1005') {
  			  credencialesEstudiante = {
 				identificacion: user.identificacion,

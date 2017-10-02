@@ -51,7 +51,6 @@ var LDAP_STRATEGY_CONFIG = {
 
 function _onLdapStrategy(estudiante, next) {
   var username;
-  console.log(estudiante);
   if (!estudiante) {
     return next(null, false, {message: 'No se encontro el usuario.'});
   }
