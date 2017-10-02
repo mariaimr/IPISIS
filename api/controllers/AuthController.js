@@ -40,7 +40,7 @@ function _onPassportAuth(req, res, err, user, info) {
  			  credencialesEstudiante = {
 				identificacion: user.identificacion,
 				nombreUsuario: user.nombreUsuario,
-				nombre: user.nombreUsuario, //Aqui debería ir el nombre del estudiante
+				nombre: user.nombre, //Aqui debería ir el nombre del estudiante
         correo: user.nombreUsuario+'@udea.edu.co'
 			}
 
