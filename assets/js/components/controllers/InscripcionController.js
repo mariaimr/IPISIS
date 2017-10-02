@@ -110,7 +110,7 @@ function ($scope, $ngConfirm, OfertaService, InscripcionService, SemestreService
                     content: '<p>Los siguientes estudiantes ya están inscritos \
                     en la cantidad máxima de inscripciones \
                     o ya están matriculados en una oferta para la asignatura seleccionada.<p> \
-                    <p ng-repeat="est in estudiantes"><b>{{est.nombre}}<b/></p>',
+                    <p ng-repeat="est in estudiantes"><b>{{estudiante.nombre}}<b/></p>',
                     backgroundDismiss: true,
                     scope: $scope,
                     buttons: {
@@ -125,7 +125,7 @@ function ($scope, $ngConfirm, OfertaService, InscripcionService, SemestreService
                   $scope.estudiante = err.estudiante;
                   $ngConfirm({
                     title: 'Error',
-                    content: '<p>El siguiente estudiante no cumple con la cantidad mínima de creditos aprobados: <b>{{est.nombre}}</b></p>',
+                    content: '<p>El siguiente estudiante no cumple con la cantidad mínima de creditos aprobados: <b>{{estudiante.nombre}}</b></p>',
                     type: 'red',
                     backgroundDismiss: true,
                     scope: $scope
@@ -134,7 +134,7 @@ function ($scope, $ngConfirm, OfertaService, InscripcionService, SemestreService
                   $scope.estudiante = err.estudiante;
                   $ngConfirm({
                     title: 'Error',
-                    content: '<p>El siguiente estudiante no cumple los prerrequisitos de la oferta: <b>{{est.nombre}}</b></p>',
+                    content: '<p>El siguiente estudiante no cumple los prerrequisitos de la oferta: <b>{{estudiante.nombre}}</b></p>',
                     type: 'red',
                     backgroundDismiss: true,
                     scope: $scope

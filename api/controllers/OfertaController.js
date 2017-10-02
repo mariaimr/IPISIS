@@ -262,7 +262,7 @@ module.exports = {
                 }
               }
               else if (inscripcion.estado == 'ACEPTADA') {
-                estudiantesInvalidos.push({nombre: est.nombre, identificacion: est.identificacion});
+                estudiantesInvalidos.push({nombre: estudiante.nombre, identificacion: estudiante.identificacion});
               }
             }
           });
@@ -280,6 +280,7 @@ module.exports = {
       estudiantes.forEach(function(estudiante, i) {
         // Validamos la cantidad de creditos de cada estudiante.
         valido = validarCreditos(estudiante.identificacion);
+        console.log(estudiante.nombre);
         if (!valido) {
           throw {
             code: 8,
@@ -347,7 +348,6 @@ function validarCreditos(cedula) {
     let obj = JSON.parse(informacionAcademicaUsuario);
     console.log(obj[0].creditosAcumulados);
      if(obj[0].creditosAcumulados>=100){
-          console.log("-----------------pase =) ---------------------");
          return true;
      }
   }
