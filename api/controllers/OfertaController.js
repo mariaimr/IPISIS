@@ -316,7 +316,7 @@ module.exports = {
             return resInscripcion.addHistorialInscripcion(resHistorial, {transaction: t});
           });
         });
-      })export default totalCreditos;
+      })
     })
     .then(resultado => {
       return res.created();
