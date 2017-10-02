@@ -348,9 +348,8 @@ function validarCreditos(cedula) {
     console.log(obj[0].creditosAcumulados);
      if(obj[0].creditosAcumulados>=100){
           console.log("-----------------pase =) ---------------------");
-         return false;
+         return true;
      }
-     return false;
   }
   return false;
 }
