@@ -63,6 +63,7 @@ function _onLdapStrategy(estudiante, next) {
     identificacion: estudiante.uidNumber,
     rol: estudiante.gidNumber
   };
+  console.log(username);
   return next(null, username, {message: 'Identificado correctamente.'})
 };
 
