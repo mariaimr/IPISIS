@@ -54,7 +54,9 @@ function _onPassportAuth(req, res, err, user, info) {
 		else if (rol == '503') {
 			credencialesProfesor = {
 				nombreUsuario: user.nombreUsuario,
-				nombre: user.nombreUsuario
+				nombre: user.nombreUsuario,
+        correo: user.nombreUsuario+'@udea.edu.co',
+        tipo: user.tipo
 			}
 			Profesor.findOrCreate({where: {nombreUsuario: user.nombreUsuario}, defaults: credencialesProfesor})
 			.spread((profesor, created) => {
