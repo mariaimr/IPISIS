@@ -28,6 +28,7 @@ var JWT_STRATEGY_CONFIG = {
 
 function _onJwtStrategyAuth(payload, next) {
   var user = payload.user;
+  console.log(user,"------------------");
   return next(null, user, {});
 };
 
@@ -51,7 +52,7 @@ var LDAP_STRATEGY_CONFIG = {
 
 function _onLdapStrategy(estudiante, next) {
   var username;
-  
+
   if (!estudiante) {
     return next(null, false, {message: 'No se encontro el usuario.'});
   }
@@ -62,7 +63,6 @@ function _onLdapStrategy(estudiante, next) {
     identificacion: estudiante.uidNumber,
     rol: estudiante.gidNumber
   };
-  console.log(username);
   return next(null, username, {message: 'Identificado correctamente.'})
 };
 
