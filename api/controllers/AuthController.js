@@ -55,7 +55,7 @@ function _onPassportAuth(req, res, err, user, info) {
 			credencialesProfesor = {
 				nombreUsuario: user.nombreUsuario,
 				nombre: user.nombreUsuario,
-        tipo: user.tipo,
+        tipo: 'planta',
         correo: user.nombreUsuario+'@udea.edu.co'
 			}
 			Profesor.findOrCreate({where: {nombreUsuario: user.nombreUsuario}, defaults: credencialesProfesor})
