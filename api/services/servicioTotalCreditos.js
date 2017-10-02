@@ -25,4 +25,4 @@
         json = clientWS.obtenerStringSync(nombre_servicio,"6aaa5e631067cdda423396987f54f9df96625150");
         return json;
       }
-export {totalCreditos};
+export default totalCreditos;
