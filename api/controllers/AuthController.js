@@ -55,7 +55,7 @@ function _onPassportAuth(req, res, err, user, info) {
 		else if (rol == '503') {
 			credencialesProfesor = {
 				nombreUsuario: user.nombreUsuario,
-				nombre: user.nombreUsuario,
+				nombre: user.nombre,
         tipo: 'planta',
         correo: user.nombreUsuario+'@udea.edu.co'
 			}
