@@ -4,7 +4,7 @@
 * @description :: Server-side logic for managing Ofertas
 * @help        :: See http://sailsjs.org/#!/documentation/concepts/Controllers
 */
-//const servicioTotalCreditos = require('../services/servicioTotalCreditos');
+const servicioTotalCreditos = require('../services/servicioTotalCreditos');
 
 module.exports = {
 
@@ -316,7 +316,7 @@ module.exports = {
             return resInscripcion.addHistorialInscripcion(resHistorial, {transaction: t});
           });
         });
-      })
+      })export default totalCreditos;
     })
     .then(resultado => {
       return res.created();
@@ -336,9 +336,8 @@ module.exports = {
 };
 
 function validarCreditos(cedula) {
-import {totalCreditos} from "../services/servicioTotalCreditos.js";
   if (cedula) {
-    let informacionAcademicaUsuario = totalCreditos("consultainformacionacademicamares","cedula",cedula).then(data => {
+    let informacionAcademicaUsuario = servicioTotalCreditos.totalCreditos("consultainformacionacademicamares","cedula",cedula).then(data => {
       console.log('Entre');
           return false;
     }).catch(err => {
