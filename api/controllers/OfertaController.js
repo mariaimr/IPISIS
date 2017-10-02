@@ -339,16 +339,16 @@ function validarCreditos(cedula) {
   if (cedula) {
     console.log("SERVICIO----->", servicioTotalCreditos("consultainformacionacademicamares","cedula",cedula));
     console.log("SERVICIO----->", servicioTotalCreditos.totalc);
-    let informacionAcademicaUsuario = servicioTotalCreditos("consultainformacionacademicamares","cedula",cedula).then(data => {
-      console.log('Entre');
-          return false;
-    }).catch(err => {
-      return false;
-    });
+    let informacionAcademicaUsuario = servicioTotalCreditos("consultainformacionacademicamares","cedula",cedula)//.then(data => {
+      //console.log('Entre');
+        //  return false;
+    //}).catch(err => {
+      //return false;
+    //});
 
-    //let obj = JSON.parse(informacionAcademicaUsuario);
+    let obj = JSON.parse(informacionAcademicaUsuario);
     console.log(informacionAcademicaUsuario);
-    // if(obj[0].creditosAcumulados>=100){
+     //if(obj[0].creditosAcumulados>=100){
          return false;
     // }
   }
