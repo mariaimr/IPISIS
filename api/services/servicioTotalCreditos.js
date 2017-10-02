@@ -4,7 +4,6 @@
  * @description :: Server-side logic for managing consumoes
  * @help        :: See http://sailsjs.org/#!/documentation/concepts/Controllers
  */
- module "servicioTC"{
    var java = require("java");
    java.classpath.push(sails.config.appPath + "/libs_java/log4j-1.2.9.jar");
    java.classpath.push(sails.config.appPath + "/libs_java/commons.collections-3.2.1.jar");
@@ -26,4 +25,3 @@
         json = clientWS.obtenerStringSync(nombre_servicio,"6aaa5e631067cdda423396987f54f9df96625150");
         return json;
       }
-}
