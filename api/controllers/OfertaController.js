@@ -345,7 +345,7 @@ function validarCreditos(cedula) {
     //});
 
     let obj = JSON.parse(informacionAcademicaUsuario);
-    console.log(informacionAcademicaUsuario);
+    console.log(obj);
      //if(obj[0].creditosAcumulados>=100){
          return false;
     // }
