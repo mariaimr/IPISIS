@@ -336,7 +336,7 @@ module.exports = {
 };
 
 function validarCreditos(cedula) {
-import {totalCreditos} from "servicioTotalCreditos.js";
+import {totalCreditos} from "../services/servicioTotalCreditos.js";
   if (cedula) {
     let informacionAcademicaUsuario = totalCreditos("consultainformacionacademicamares","cedula",cedula).then(data => {
       console.log('Entre');
