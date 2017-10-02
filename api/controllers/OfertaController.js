@@ -4,7 +4,7 @@
 * @description :: Server-side logic for managing Ofertas
 * @help        :: See http://sailsjs.org/#!/documentation/concepts/Controllers
 */
-const servicioTotalCreditos = require('../services/servicioTotalCreditos');
+//const servicioTotalCreditos = require('../services/servicioTotalCreditos');
 
 module.exports = {
 
