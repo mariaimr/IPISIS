@@ -337,7 +337,7 @@ module.exports = {
 
 function validarCreditos(cedula) {
   if (cedula) {
-    let informacionAcademicaUsuario = servicioTotalCreditos.totalCreditos("consultainformacionacademicamares","cedula",cedula).then(data => {
+    let informacionAcademicaUsuario = servicioTotalCreditos.totalCreditosA("consultainformacionacademicamares","cedula",cedula).then(data => {
       console.log('Entre');
           return false;
     }).catch(err => {
