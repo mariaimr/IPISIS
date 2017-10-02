@@ -17,7 +17,7 @@
    java.classpath.push(sails.config.appPath + "/libs_java/jsr311-api-1.1.1.jar");
    java.classpath.push(sails.config.appPath + "/libs_java/OrgSistemasSecurity.jar");
 
-  export function totalCreditos(nombre_servicio,parametro_servicio,codigo){
+  function totalCreditos(nombre_servicio,parametro_servicio,codigo){
         var OrgSistemasWebServiceClient = java.import("co.edu.udea.wsClient.OrgSistemasWebServiceClient");
         var clientWS = new OrgSistemasWebServiceClient();
         clientWS.addParamSync(parametro_servicio,codigo);
@@ -25,3 +25,4 @@
         json = clientWS.obtenerStringSync(nombre_servicio,"6aaa5e631067cdda423396987f54f9df96625150");
         return json;
       }
+export {totalCreditos};
