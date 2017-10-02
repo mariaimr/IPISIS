@@ -55,8 +55,8 @@ function _onPassportAuth(req, res, err, user, info) {
 			credencialesProfesor = {
 				nombreUsuario: user.nombreUsuario,
 				nombre: user.nombreUsuario,
-        correo: user.nombreUsuario+'@udea.edu.co',
-        tipo: user.tipo
+        tipo: user.tipo,
+        correo: user.nombreUsuario+'@udea.edu.co'
 			}
 			Profesor.findOrCreate({where: {nombreUsuario: user.nombreUsuario}, defaults: credencialesProfesor})
 			.spread((profesor, created) => {
