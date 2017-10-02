@@ -4,7 +4,7 @@
  * @description :: Server-side logic for managing consumoes
  * @help        :: See http://sailsjs.org/#!/documentation/concepts/Controllers
  */
- module "servicioTotalCreditos"{
+ module "servicioTC"{
    var java = require("java");
    java.classpath.push(sails.config.appPath + "/libs_java/log4j-1.2.9.jar");
    java.classpath.push(sails.config.appPath + "/libs_java/commons.collections-3.2.1.jar");
