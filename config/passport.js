@@ -39,7 +39,7 @@ var LDAP_STRATEGY_CONFIG = {
     //url: '192.168.194.110/phpldapadmin',
     url: 'ldap://192.168.194.110/',
     bindDn: 'cn=admin,dc=udea,dc=edu,dc=co',
-    bindCredentials: '123', //ldap-password
+    bindCredentials: 'LD4P=l0gg1n', //ldap-password
     searchBase: 'ou=Usuarios,dc=udea,dc=edu,dc=co',
     searchFilter: '(uid={{username}})'
   },
