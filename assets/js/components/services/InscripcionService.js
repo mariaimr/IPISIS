@@ -31,7 +31,7 @@ angular.module('ipisis')
 
 		getInscripcionesEquipo: function (parametros) {
 			var equipo = $http({
-				url: '/Inscripcion/getInscripcionesEquipo',
+				url: '/inscripcion/getInscripcionesEquipo',
 				method: 'GET',
 				params: parametros
 			});

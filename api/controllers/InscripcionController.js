@@ -209,9 +209,15 @@ module.exports = {
       ]
     })
     .then(resHistorial => {
+      console.log("******************");
+      console.log(resHistorial[0]);
+      console.log("******************");
       return res.ok(resHistorial);
     })
     .catch(err => {
+      console.log("******************");
+      console.log(err);
+      console.log("******************");
       return res.serverError(err);
     });
   }

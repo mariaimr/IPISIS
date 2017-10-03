@@ -1,11 +1,13 @@
 angular.module('ipisis')
 .controller('InscripcionesController', ['$scope','$ngConfirm', 'InscripcionService',
 function ($scope, $ngConfirm, InscripcionService ) {
+  console.log($scope.equipo);
 
     InscripcionService.getInscripcionesEquipo({equipoCodigo: $scope.equipo.codigo})
       .success(function (resultado) {
-        $scope.inscripciones = resultado
+        $scope.inscripciones = resultado;
         console.log($scope.inscripciones);
+        console.log(resultado);
       })
       .error(function (err) {
         console.log(err);

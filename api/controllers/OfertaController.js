@@ -238,7 +238,7 @@ module.exports = {
           }
 
           // Control para validación del limite de inscripciones del equipo.
-          if (estado == 'CREADA') {
+          if (estado == 'CREADA') {inscripcion
             numInscripciones += 1;
             if (numInscripciones >= MAXIMOINSCRIPCIONES) {
               throw {code: 6, msg: 'El equipo ya está inscrito a la cantidad máxima de ofertas.'};
@@ -301,7 +301,7 @@ module.exports = {
       });
 
       return sequelize.transaction( t => {
-        var inconsumir_servicio_creditosscripcion = {
+        var inscripcion = {
           fechaCreacion: new Date(Date.now() + (-300 *60 * 1000)),
           equipoCodigo: equipoCodigo,
           ofertaId: ofertaId,
@@ -310,7 +310,7 @@ module.exports = {
         return Inscripcion.create(inscripcion, {transaction: t}).then(resInscripcion => {
           var historial = {
             fechaActualizacion: new Date(Date.now() + (-300 *60 * 1000)),
-            observacion: 'InstotalCreditoscripción creada.',
+            observacion: 'Inscripción creada.',
             estado: 'CREADA',
           }
           return HistorialInscripcion.create(historial, {transaction: t}).then(resHistorial => {
