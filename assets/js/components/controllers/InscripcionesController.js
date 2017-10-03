@@ -5,6 +5,7 @@ function ($scope, $ngConfirm, InscripcionService ) {
     InscripcionService.getInscripcionesEquipo({equipoCodigo: $scope.equipo.codigo})
       .success(function (resultado) {
         $scope.inscripciones = resultado
+        console.log($scope.inscripciones);
       })
       .error(function (err) {
         console.log(err);
