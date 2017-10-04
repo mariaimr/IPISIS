@@ -355,7 +355,7 @@ function validarCreditos(cedula) {
 }
 
 function validarPrerrequisitos(cedula, prerrequisitos) {
-  console.log(prerrequisitos);
+  console.log(prerrequisitos[0].instance.dataValues.codigo);
   if (cedula) {
     return true
   }
