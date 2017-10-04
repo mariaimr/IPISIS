@@ -28,7 +28,6 @@ var JWT_STRATEGY_CONFIG = {
 
 function _onJwtStrategyAuth(payload, next) {
   var user = payload.user;
-  console.log(user,"------------------");
   return next(null, user, {});
 };
 
@@ -36,8 +35,6 @@ function _onJwtStrategyAuth(payload, next) {
 
 var LDAP_STRATEGY_CONFIG = {
   server: {
-    //url: '192.168.194.110',
-    //url: '192.168.194.110/phpldapadmin',
     url: 'ldap://192.168.194.110/',
     bindDn: 'cn=admin,dc=udea,dc=edu,dc=co',
     bindCredentials: 'LD4P=l0gg1n', //ldap-password
@@ -62,6 +59,7 @@ function _onLdapStrategy(estudiante, next) {
     identificacion: estudiante.uidNumber,
     rol: estudiante.gidNumber
   };
+    console.log(username.nombre);
   return next(null, username, {message: 'Identificado correctamente.'})
 };
 
