@@ -338,25 +338,25 @@ module.exports = {
 
 function validarCreditos(cedula) {
   if (cedula) {
-    let informacionAcademicaUsuario = servicioTotalCreditos("consultainformacionacademicamares","cedula",cedula)//.then(data => {
+    //----let informacionAcademicaUsuario = servicioTotalCreditos("consultainformacionacademicamares","cedula",cedula)//.then(data => {
       //console.log('Entre');
         //  return false;
     //}).catch(err => {
       //return false;
     //});
 
-    let obj = JSON.parse(informacionAcademicaUsuario);
-    console.log(obj[0].creditosAcumulados);
-     if(obj[0].creditosAcumulados>=100){
+    //---let obj = JSON.parse(informacionAcademicaUsuario);
+    //-------console.log(obj[0].creditosAcumulados);
+     //--if(obj[0].creditosAcumulados>=100){
          return true;
-     }
+     //--}
   }
   return false;
 }
 
 function validarPrerrequisitos(cedula, prerrequisitos) {
-  //console.log(prerrequisitos[0].dataValues.codigo);
-  //console.log(prerrequisitos.length,"Tamaño del vector de prerrequisitos");
+  console.log(prerrequisitos[0].dataValues.codigo);
+  console.log(prerrequisitos.length,"Tamaño del vector de prerrequisitos");
   let codigo_materia;
   for (var i = 0; i < prerrequisitos.length; i++) {
     codigo_materia = prerrequisitos[i].dataValues.codigo;
