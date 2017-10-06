@@ -361,7 +361,7 @@ function validarPrerrequisitos(cedula, prerrequisitos) {
   console.log(prerrequisitos.length,"Tamaño del vector de prerrequisitos");
   const programa="504";
   let nombre_sevicio="consultaestudianteaprobomateriamares";
-  let codigo_materia;
+  let codigo_materia= "";
   for (var i = 0; i < prerrequisitos.length; i++) {
     codigo_materia = prerrequisitos[i].dataValues.codigo;
     let informacionPrerrequisitoEstudiante = servicioAproboMateria(nombre_sevicio,"cedula","programa","materia",cedula,programa,codigo_materia);
