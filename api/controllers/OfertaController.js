@@ -357,8 +357,6 @@ function validarCreditos(cedula) {
 }
 
 function validarPrerrequisitos(cedula, prerrequisitos) {
-  console.log(prerrequisitos[0].dataValues.codigo);
-  console.log(prerrequisitos.length,"Tamaño del vector de prerrequisitos");
   const programa="504";
   let nombre_sevicio="consultaestudianteaprobomateriamares";
   let codigo_materia= "";
@@ -366,9 +364,9 @@ function validarPrerrequisitos(cedula, prerrequisitos) {
     codigo_materia = prerrequisitos[i].dataValues.codigo.toString();
     let informacionPrerrequisitoEstudiante = servicioAproboMateria(nombre_sevicio,"cedula","programa","materia",cedula,programa,codigo_materia);
     console.log(informacionPrerrequisitoEstudiante);
+    if (informacionPrerrequisitoEstudiante=== 'N') {
+      return false;
+    }
   }
-  if (cedula) {
-    return true
-  }
-  return false;
+  return true;
 }
