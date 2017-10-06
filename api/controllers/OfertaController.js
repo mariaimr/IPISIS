@@ -363,7 +363,7 @@ function validarPrerrequisitos(cedula, prerrequisitos) {
   let nombre_sevicio="consultaestudianteaprobomateriamares";
   let codigo_materia= "";
   for (var i = 0; i < prerrequisitos.length; i++) {
-    codigo_materia = prerrequisitos[i].dataValues.codigo;
+    codigo_materia = prerrequisitos[i].dataValues.codigo.toString();
     let informacionPrerrequisitoEstudiante = servicioAproboMateria(nombre_sevicio,"cedula","programa","materia",cedula,programa,codigo_materia);
     console.log(informacionPrerrequisitoEstudiante);
   }
