@@ -23,6 +23,9 @@
   module.exports = function(nombre_servicio,cedula,programa,materia,valor1,valor2,valor3){
             var OrgSistemasWebServiceClient = java.import("co.edu.udea.wsClient.OrgSistemasWebServiceClient");
             var clientWS = new OrgSistemasWebServiceClient(true);
+            console.log(typeof cedula);
+            console.log(typeof materia);
+            console.log(typeof programa);
             clientWS.addParamSync(cedula,valor1);
             clientWS.addParamSync(programa,valor2);
             clientWS.addParamSync(materia,valor3);
