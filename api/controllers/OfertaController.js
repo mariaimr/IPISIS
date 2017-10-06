@@ -355,8 +355,13 @@ function validarCreditos(cedula) {
 }
 
 function validarPrerrequisitos(cedula, prerrequisitos) {
-  console.log(prerrequisitos[0].dataValues.codigo);
-  console.log(prerrequisitos.length,"Tamaño del vector de prerrequisitos");
+  //console.log(prerrequisitos[0].dataValues.codigo);
+  //console.log(prerrequisitos.length,"Tamaño del vector de prerrequisitos");
+  let codigo_materia;
+  for (var i = 0; i < prerrequisitos.length; i++) {
+    codigo_materia = prerrequisitos[i].dataValues.codigo;
+    console.log(codigo_materia,"----->",i);
+  }
   if (cedula) {
     return true
   }
