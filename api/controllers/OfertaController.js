@@ -356,6 +356,7 @@ function validarCreditos(cedula) {
 
 function validarPrerrequisitos(cedula, prerrequisitos) {
   console.log(prerrequisitos[0].dataValues.codigo);
+  console.log(prerrequisitos.length,"Tamaño del vector de prerrequisitos");
   if (cedula) {
     return true
   }
