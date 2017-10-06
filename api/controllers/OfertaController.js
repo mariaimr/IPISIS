@@ -5,6 +5,7 @@
 * @help        :: See http://sailsjs.org/#!/documentation/concepts/Controllers
 */
 const servicioTotalCreditos = require('../services/servicioTotalCreditos');
+const servicioAproboMateria = require('../services/servicioAproboMateria');
 
 module.exports = {
 
@@ -338,18 +339,19 @@ module.exports = {
 
 function validarCreditos(cedula) {
   if (cedula) {
-    //----let informacionAcademicaUsuario = servicioTotalCreditos("consultainformacionacademicamares","cedula",cedula)//.then(data => {
+    let nombre_sevicio="consultainformacionacademicamares";
+    let informacionAcademicaUsuario = servicioTotalCreditos(nombre_sevicio,"cedula",cedula)//.then(data => {
       //console.log('Entre');
         //  return false;
     //}).catch(err => {
       //return false;
     //});
 
-    //---let obj = JSON.parse(informacionAcademicaUsuario);
-    //-------console.log(obj[0].creditosAcumulados);
-     //--if(obj[0].creditosAcumulados>=100){
+    let obj = JSON.parse(informacionAcademicaUsuario);
+    console.log(obj[0].creditosAcumulados);
+    if(obj[0].creditosAcumulados>=100){
          return true;
-     //--}
+     }
   }
   return false;
 }
@@ -357,10 +359,13 @@ function validarCreditos(cedula) {
 function validarPrerrequisitos(cedula, prerrequisitos) {
   console.log(prerrequisitos[0].dataValues.codigo);
   console.log(prerrequisitos.length,"Tamaño del vector de prerrequisitos");
+  const programa="504";
+  let nombre_sevicio="consultaestudianteaprobomateriamares";
   let codigo_materia;
   for (var i = 0; i < prerrequisitos.length; i++) {
     codigo_materia = prerrequisitos[i].dataValues.codigo;
-    console.log(codigo_materia,"----->",i);
+    let informacionPrerrequisitoEstudiante = servicioAproboMateria(nombre_sevicio,"cedula","programa","materia",cedula,programa,codigo_materia);
+    console.log(informacionPrerrequisitoEstudiante);
   }
   if (cedula) {
     return true
