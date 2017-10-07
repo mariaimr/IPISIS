@@ -281,11 +281,16 @@ module.exports = {
       estudiantes.forEach(function(estudiante, i) {
         // Validamos la cantidad de creditos de cada estudiante.
         valido = validarCreditos(estudiante.identificacion);
-        console.log(estudiante.nombre);
         if (!valido) {
           throw {
             code: 8,
             msg: 'El estudiante ' + estudiante.nombre + ' no cumple con la cantidad de creditos.',
+            estudiante: estudiante
+          };
+        }else if(valido==='err'){
+          throw {
+            code: 8,
+            msg: 'Ha ocurrido un error interno, por favor intentelo mas tarde',
             estudiante: estudiante
           };
         }
@@ -342,8 +347,7 @@ function validarCreditos(cedula) {
     let nombre_sevicio="consultainformacionacademicamares";
     let informacionAcademicaUsuario = servicioTotalCreditos(nombre_sevicio,"cedula",cedula)
     if (informacionAcademicaUsuario==='[]'||informacionAcademicaUsuario==null||informacionAcademicaUsuario==undefined) {
-      console.log(informacionAcademicaUsuario);
-      return false;
+      return 'err';
     }
     let obj = JSON.parse(informacionAcademicaUsuario);
     console.log(obj[0].creditosAcumulados);
