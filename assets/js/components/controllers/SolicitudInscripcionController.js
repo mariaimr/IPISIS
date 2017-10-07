@@ -50,21 +50,25 @@ function ($scope, $ngConfirm, OfertaService, InscripcionService, SemestreService
           btnClass: 'btn-success',
           action: function (scope, button) {
             if (!$scope.observacion) {
-              $scope.error = true;
-              $scope.mensajeError = 'Debe ingresar la observación.';
-              return false;
+              if(!$scope.grupo){
+                $scope.error = true;
+                $scope.mensajeError = 'Debe ingresar una observación y un grupo.';
+                return false;
+              }
             }
 
             parametros = {
               accion: 1,
               inscripcionId: $scope.inscripcionActual.id,
-              observacion: $scope.observacion
+              observacion: $scope.observacion,
+              grupoMares: $scope.grupo
             };
-
+            //console.log($scope.grupo,"--------------");
             InscripcionService.gestionarInscripcion(parametros)
             .success(function (resultado) {
               $scope.error = false;
               $scope.observacion = '';
+              $scope.grupo = '';
               cargarInformacion();
             })
             .error(function (err) {

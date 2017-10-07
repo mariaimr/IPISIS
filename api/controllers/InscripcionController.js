@@ -66,6 +66,7 @@ module.exports = {
     var observacion = null;
     var estado = null;
     var historial = null;
+    var grupo_Mares = null;
 
     accion = req.param('accion');
     if (!accion) {
@@ -80,6 +81,11 @@ module.exports = {
     observacion = req.param('observacion');
     if (!observacion) {
       return res.badRequest({code: 1, msg:'Debe ingresar una observación.'});
+    }
+
+    grupo_Mares = req.param('grupoMares');
+    if (!grupo_Mares) {
+      return res.badRequest({code: 1, msg:'Debe ingresar un grupo.'});
     }
 
     if (accion == 1) {
@@ -148,6 +154,7 @@ module.exports = {
             .then( resHistorialInscripcion => {
               var proyecto = {
                 inscripcionId: resInscripcion.id,
+                grupoMares: grupo_Mares,
                 nombre: resInscripcion.oferta.idea.titulo
               }
               return Proyecto.create(proyecto, {transaction: t});
@@ -209,15 +216,9 @@ module.exports = {
       ]
     })
     .then(resHistorial => {
-      console.log("******************");
-      console.log(resHistorial[0]);
-      console.log("******************");
       return res.ok(resHistorial);
     })
     .catch(err => {
-      console.log("******************");
-      console.log(err);
-      console.log("******************");
       return res.serverError(err);
     });
   }

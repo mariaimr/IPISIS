@@ -32,12 +32,16 @@
       <thead>
         <tr>
           <th>Código</th>
+          <th>Grupo</th>
           <th>Nombre</th>
         </tr>
       </thead>
       <tbody>
         <tr>
           <td>{{inscripcionActual.materia.codigo}}</td>
+          <td>
+            <input style="resize:none;height:25px;width:100%;border:0" ng-model="grupo" placeholder="Digite el grupo de Mares."></input>
+          </td>
           <td>{{inscripcionActual.materia.nombre}}</td>
         </tr>
       </tbody>
