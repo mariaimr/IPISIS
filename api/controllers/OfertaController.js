@@ -281,16 +281,18 @@ module.exports = {
       estudiantes.forEach(function(estudiante, i) {
         // Validamos la cantidad de creditos de cada estudiante.
         valido = validarCreditos(estudiante.identificacion);
+        console.log(valido);
+        if (valido==='err') {
+          throw {
+            code: 8,
+            msg: 'Ha ocurrido un error interno, por favor intentelo más tarde',
+            estudiante: estudiante
+          };
+        }
         if (!valido) {
           throw {
             code: 8,
             msg: 'El estudiante ' + estudiante.nombre + ' no cumple con la cantidad de creditos.',
-            estudiante: estudiante
-          };
-        }else if(valido==='err'){
-          throw {
-            code: 8,
-            msg: 'Ha ocurrido un error interno, por favor intentelo mas tarde',
             estudiante: estudiante
           };
         }
