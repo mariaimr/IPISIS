@@ -341,7 +341,7 @@ function validarCreditos(cedula) {
   if (cedula) {
     let nombre_sevicio="consultainformacionacademicamares";
     let informacionAcademicaUsuario = servicioTotalCreditos(nombre_sevicio,"cedula",cedula)
-    if (informacionAcademicaUsuario==='[]'||informacionAcademicaUsuario==null||||informacionAcademicaUsuario==undefined) {
+    if (informacionAcademicaUsuario==='[]'||informacionAcademicaUsuario==null||informacionAcademicaUsuario==undefined) {
       console.log(informacionAcademicaUsuario);
       return false;
     }
