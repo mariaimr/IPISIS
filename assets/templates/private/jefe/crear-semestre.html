@@ -13,6 +13,9 @@
         <div ng-messages="semestreForm.codigo.$error" ng-if="semestreForm.codigo.$touched || semestreForm.$submitted" ng-messages-multiple>
           <p ng-message="required" class="help-block"><b>Debe ingresar un código de semestre válido, ejemplo (2017-2).</b></p>
         </div>
+        <div ng-messages="semestreForm.codigo.$error" ng-if="semestreForm.codigo.$invalid" ng-messages-multiple>
+          <p ng-message="required" class="help-block"><b>Debe ingresar un código de la forma 2017-1.</b></p>
+        </div>
       </div>
     </div>
   </fieldset>
