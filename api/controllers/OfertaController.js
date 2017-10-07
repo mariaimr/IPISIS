@@ -282,7 +282,7 @@ module.exports = {
         // Validamos la cantidad de creditos de cada estudiante.
         valido = validarCreditos(estudiante.identificacion);
         console.log(valido);
-        if (valido==='err') {
+        if (valido=='err') {
           throw {
             code: 8,
             msg: 'Ha ocurrido un error interno, por favor intentelo más tarde',
