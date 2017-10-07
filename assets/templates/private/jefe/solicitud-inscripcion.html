@@ -21,7 +21,7 @@
     </thead>
 
     <tbody>
-    <tr ng-repeat="inscripcion in inscripciones | filter:buscar">
+    <tr ng-repeat="inscripcion in inscripciones | filter:buscar | orderBy:'-oferta.idea.titulo'">
       <td><b>{{inscripcion.id}}</b></td>
       <td>{{inscripcion.fechaCreacion | date:'medium'}}</td>
       <td>{{inscripcion.oferta.idea.titulo}}</td>
