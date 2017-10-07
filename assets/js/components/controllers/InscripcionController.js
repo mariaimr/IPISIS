@@ -159,7 +159,7 @@ function ($scope, $ngConfirm, OfertaService, InscripcionService, SemestreService
                 } else {
                   $ngConfirm({
                     title: 'Error',
-                    content: 'La inscripción no ha sido completada',
+                    content: 'Ha ocurrido un error interno, por favor intentelo más tarde',
                     type: 'red',
                     backgrounDismiss: true
                   });

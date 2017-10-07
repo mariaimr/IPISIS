@@ -284,7 +284,7 @@ module.exports = {
         console.log(valido);
         if (valido=='err') {
           throw {
-            code: 8,
+            code: 12,
             msg: 'Ha ocurrido un error interno, por favor intentelo más tarde',
             estudiante: estudiante
           };
