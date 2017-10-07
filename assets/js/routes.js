@@ -298,6 +298,10 @@ function($stateProvider, $urlRouterProvider, ROLES){
 				redirectTo: 'signin'
 			}
 		}
+	})
+	.state("generarReporte",{
+		url:"/generar-reporte",
+		controller:"GenerarReporteController"
 	});
 
 	$urlRouterProvider.otherwise('/');
