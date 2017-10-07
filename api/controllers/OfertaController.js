@@ -340,18 +340,14 @@ module.exports = {
 function validarCreditos(cedula) {
   if (cedula) {
     let nombre_sevicio="consultainformacionacademicamares";
-    let informacionAcademicaUsuario = servicioTotalCreditos(nombre_sevicio,"cedula",cedula)//.then(data => {
-      //console.log('Entre');
-        //  return false;
-    //}).catch(err => {
-      //return false;
-    //});
-
-    let obj = JSON.parse(informacionAcademicaUsuario);
-    console.log(obj[0].creditosAcumulados);
-    if(obj[0].creditosAcumulados>=100){
-         return true;
-     }
+    let informacionAcademicaUsuario = servicioTotalCreditos(nombre_sevicio,"cedula",cedula).then(data => {
+      let obj = JSON.parse(informacionAcademicaUsuario);
+      if(obj[0].creditosAcumulados>=100){
+           return true;
+       }
+    }).catch(err => {
+      return false;
+    });
   }
   return false;
 }
