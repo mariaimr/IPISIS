@@ -340,7 +340,7 @@ module.exports = {
 function validarCreditos(cedula) {
   if (cedula) {
     let nombre_sevicio="consultainformacionacademicamares";
-    let informacionAcademicaUsuario = servicioTotalCreditos(nombre_sevicio,"cedula",cedula).then(data => {
+    let informacionAcademicaUsuario = servicioTotalCreditos(nombre_sevicio,"cedula",cedula).promise.then(data => {
       let obj = JSON.parse(informacionAcademicaUsuario);
       if(obj[0].creditosAcumulados>=100){
            return true;
