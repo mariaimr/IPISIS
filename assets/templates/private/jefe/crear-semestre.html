@@ -6,7 +6,7 @@
         <div ng-class="{'has-error': semestreForm.codigo.$invalid && (!semestreForm.$pristine || semestreForm.$submitted || semestreForm.codigo.$touched),
         'has-success': semestreForm.codigo.$valid}">
         <legend for="">Código</legend>
-        <input type="text" class="form-control" name="codigo" ng-model="semestre.codigo"
+        <input type="text" class="form-control" name="codigo" ng-model="semestre.codigo" ng-maxlength="6"
         placeholder="e.g 2017-2" ng-readonly="semestre.modo == 'ACTUALIZAR'" required>
 
         <!-- VALIDACIONES DEL CÓDIGO -->
