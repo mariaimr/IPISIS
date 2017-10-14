@@ -14,6 +14,7 @@
       <tr>
         <th>FECHA CREACIÓN</th>
         <th>NOMBRE DE LA IDEA</th>
+        <th>CÓDIGO</th>
         <th>TUTOR</th>
         <th></th>
       </tr>
@@ -23,6 +24,7 @@
     <tr ng-repeat="inscripcion in inscripciones | filter:buscar | orderBy:'oferta.idea.titulo'">
       <td>{{inscripcion.fechaCreacion | date:'medium'}}</td>
       <td>{{inscripcion.oferta.idea.titulo}}</td>
+      <td>{{inscripcion.oferta.idea.id}}</td>
       <td>{{inscripcion.oferta.profesor.nombre}}</td>
       <td><a class="btn btn-success" ng-click="seleccionar(inscripcion)" href="">Detalles</a></td>
     </tr>
