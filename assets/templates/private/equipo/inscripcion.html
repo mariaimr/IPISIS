@@ -15,10 +15,10 @@
     </thead>
 
     <tbody>
-    <tr ng-repeat="oferta in ofertas | orderBy:'oferta.idea.titulo'" ng-if="oferta.inscripciones[0].historialInscripcion.length != 1">
+    <tr ng-repeat="oferta in ofertas | orderBy:'idea.titulo'" ng-if="oferta.inscripciones[0].historialInscripcion.length != 1">
       <td>{{oferta.idea.titulo}}</td>
       <td><b>{{oferta.id}}</b></td>
-      <td><p ng-repeat="asignatura in oferta.idea.asignaturas">{{asignatura.nombre}}</p></td>
+      <td><p ng-repeat="asignatura in oferta.idea.asignaturas | orderBy:'idea.titulo'">{{asignatura.nombre}}</p></td>
       <td>{{oferta.profesor.nombre || 'No asignado'}}</td>
       <td><a class="btn btn-success"ng-click="seleccionar(oferta)" href="">Detalles</a></td>
     </tr>
