@@ -63,7 +63,6 @@ function ($scope, $ngConfirm, OfertaService, InscripcionService, SemestreService
               observacion: $scope.observacion,
               grupoMares: $scope.inscripcionActual.materia.codigo+'-'+$scope.grupo
             };
-            //console.log($scope.grupo,"--------------");
             InscripcionService.gestionarInscripcion(parametros)
             .success(function (resultado) {
               $scope.error = false;

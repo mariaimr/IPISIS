@@ -281,7 +281,6 @@ module.exports = {
       estudiantes.forEach(function(estudiante, i) {
         // Validamos la cantidad de creditos de cada estudiante.
         valido = validarCreditos(estudiante.identificacion);
-        console.log(valido);
         if (valido=='err') {
           throw {
             code: 12,
@@ -352,7 +351,6 @@ function validarCreditos(cedula) {
       return 'err';
     }
     let obj = JSON.parse(informacionAcademicaUsuario);
-    console.log(obj[0].creditosAcumulados);
     if(obj[0].creditosAcumulados>=100){
          return true;
      }
@@ -367,7 +365,6 @@ function validarPrerrequisitos(cedula, prerrequisitos) {
   for (var i = 0; i < prerrequisitos.length; i++) {
     codigo_materia = prerrequisitos[i].dataValues.codigo.toString();
     let informacionPrerrequisitoEstudiante = servicioAproboMateria(nombre_sevicio,"cedula","programa","materia",cedula,programa,codigo_materia);
-    console.log(informacionPrerrequisitoEstudiante);
     if (informacionPrerrequisitoEstudiante=== 'N') {
       return false;
     }
