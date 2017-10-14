@@ -12,6 +12,7 @@
   <table class="table">
     <thead>
       <tr>
+        <th>#</th>
         <th>FECHA CREACIÓN</th>
         <th>NOMBRE DE LA IDEA</th>
         <th>CÓDIGO</th>
@@ -22,6 +23,7 @@
 
     <tbody>
     <tr ng-repeat="inscripcion in inscripciones | filter:buscar | orderBy:'oferta.idea.titulo'">
+      <td class="text-center">{{$index + 1}}</td>
       <td>{{inscripcion.fechaCreacion | date:'medium'}}</td>
       <td>{{inscripcion.oferta.idea.titulo}}</td>
       <td>{{inscripcion.oferta.idea.id}}</td>

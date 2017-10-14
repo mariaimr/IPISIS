@@ -26,7 +26,7 @@
         <tbody class="pre-scrollable ">
           <!-- -->
           <tr ng-repeat="idea in ideas | filter: buscar | orderBy:'titulo'">
-            <td class="text-center">{{$index + 1}}</th>
+            <td class="text-center">{{$index + 1}}</td>
             <td class="text-center">{{idea.titulo | uppercase}} </td>
             <td class="text-center">{{idea.id}}</td>
             <td class="filterable-cell text-center desc">
