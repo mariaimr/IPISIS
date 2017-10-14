@@ -7,7 +7,7 @@ function ($scope, $ngConfirm, InscripcionService ) {
         $scope.inscripciones = resultado;
       })
       .error(function (err) {
-        console.log(err);
+        //console.log(err);
       })
 
 		$scope.seleccionar = function (oferta) {
@@ -40,7 +40,7 @@ function ($scope, $ngConfirm, InscripcionService ) {
                 })
                 .error(function (err) {
                   $ngConfirm('La inscripcion no ha podido se completada.');
-                  console.log(err);
+                  //console.log(err);
                 });
             }
           },

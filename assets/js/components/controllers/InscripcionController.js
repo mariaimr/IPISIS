@@ -49,7 +49,7 @@ function ($scope, $ngConfirm, OfertaService, InscripcionService, SemestreService
                 $scope.ofertas = resultado;
               }).
               error(function (err) {
-                console.log(err);
+                //console.log(err);
               });
               $ngConfirm({
                 title: '',

@@ -88,7 +88,7 @@ function ($scope, $log, $state, $stateParams, $ngConfirm, EquipoService, Estudia
       $scope.equipos.splice($scope.equipos.indexOf(equipo), 1);
     })
     .catch(function (err) {
-      console.log(err);
+      //console.log(err);
     });
   }
 

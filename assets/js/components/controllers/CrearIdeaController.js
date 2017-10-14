@@ -104,7 +104,7 @@ function($scope, $state, $ngConfirm, IdeaService, PrerrequisitoService) {
           }
         }
       });
-      console.log(err)
+      //console.log(err)
     })
   };
 
