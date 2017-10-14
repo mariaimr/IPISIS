@@ -4,7 +4,8 @@ function ($scope, $state, JefeService) {
 
   $scope.descargarReporte= function() {
     JefeService.reportExcel().then(function(data) {
-      console.log(data);
+      //controlador para el front
+      console.log("estoy descargano un Reporte");
     });
 
   }

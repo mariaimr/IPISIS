@@ -10,6 +10,7 @@
     "bluebird": "^3.4.6",
     "convert-json": "^0.5.0",
     "ejs": "2.3.4",
+    "excel-export": "0.3.9",
     "express": "~4.15.2",
     "grunt": "1.0.1",
     "grunt-contrib-clean": "1.0.0",

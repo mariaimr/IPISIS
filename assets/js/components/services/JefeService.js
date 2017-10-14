@@ -13,10 +13,12 @@ angular.module('ipisis')
 
 		reportExcel: function(){
 		return $http({
-			    url: 'http://192.168.192.17:3000/Excel',
+			    url: '/reporte/proyectosAsignados',
 			    method: "GET",
 			    headers: {
-			       'Content-type': 'application/json'
+			       'Content-type': 'application/json',
+						 'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
+						 'Access-Control-Allow-Origin': '*'
 			    },
 			    responseType: 'arraybuffer' //'blob'
 			}).success(function (data, status, headers, config) {
