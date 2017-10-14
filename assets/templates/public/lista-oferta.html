@@ -11,8 +11,9 @@
   <table class="table">
     <thead>
       <tr>
+        <th>#</th>
         <th>NOMBRE</th>
-        <th>ID</th>
+        <th>CÓDIGO</th>
         <th style="width:250px">ASIGNATURA</th>
         <th>TUTOR</th>
         <th></th>
@@ -21,8 +22,9 @@
 
     <tbody>
       <tr ng-repeat="oferta in ofertas | filter:buscar |orderBy:'idea.titulo'" ng-if="oferta.inscripciones[0].historialInscripcion.length != 1">
+        <td>{{$index + 1}}</td>
         <td>{{oferta.idea.titulo}}</td>
-        <td><b>{{oferta.id}}</b></td>
+        <td>{{oferta.id}}</td>
         <td>
           <p ng-repeat="asignatura in oferta.idea.asignaturas">{{asignatura.nombre}}</p>
         </td>
