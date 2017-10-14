@@ -6,8 +6,8 @@
   <table class="table">
     <thead>
       <tr>
-        <th>ID</th>
         <th>NOMBRE DE LA IDEA</th>
+        <th>ID</th>
         <th style="width:250px">ASIGNATURA</th>
         <th>TUTOR</th>
         <th></th>
@@ -15,9 +15,9 @@
     </thead>
 
     <tbody>
-    <tr ng-repeat="oferta in ofertas" ng-if="oferta.inscripciones[0].historialInscripcion.length != 1">
-      <td><b>{{oferta.id}}</b></td>
+    <tr ng-repeat="oferta in ofertas | orderBy:'oferta.idea.titulo'" ng-if="oferta.inscripciones[0].historialInscripcion.length != 1">
       <td>{{oferta.idea.titulo}}</td>
+      <td><b>{{oferta.id}}</b></td>
       <td><p ng-repeat="asignatura in oferta.idea.asignaturas">{{asignatura.nombre}}</p></td>
       <td>{{oferta.profesor.nombre || 'No asignado'}}</td>
       <td><a class="btn btn-success"ng-click="seleccionar(oferta)" href="">Detalles</a></td>
