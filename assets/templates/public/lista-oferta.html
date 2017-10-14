@@ -24,7 +24,7 @@
       <tr ng-repeat="oferta in ofertas | filter:buscar |orderBy:'idea.titulo'" ng-if="oferta.inscripciones[0].historialInscripcion.length != 1">
         <td class="text-center">{{$index + 1}}</th>
         <td>{{oferta.idea.titulo}}</td>
-        <td>{{oferta.id}}</td>
+        <td class="text-center">{{oferta.id}}</td>
         <td>
           <p ng-repeat="asignatura in oferta.idea.asignaturas">{{asignatura.nombre}}</p>
         </td>
