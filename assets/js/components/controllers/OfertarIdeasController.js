@@ -15,6 +15,7 @@ ipisis.controller('OfertarIdeasController', ["$scope", 'IdeaService', "ProfesorS
       });
 
     $scope.mostrar = function(idea, index) {
+      console.log(idea);
       $scope.id = idea.id;
       $scope.titulo = idea.titulo;
       $scope.descripcion = idea.descripcion;
@@ -23,9 +24,11 @@ ipisis.controller('OfertarIdeasController', ["$scope", 'IdeaService', "ProfesorS
       $scope.proponentes = idea.proponentes;
       $scope.asignaturas = idea.asignaturas;
       $scope.prerrequisitos = idea.prerrequisitos;
-      $scope.observacion = idea.observacion;
+      $scope.historialIdea = idea.historialIdea;
       $scope.index = index;
+
     };
+
 
     $scope.modalInicial = function() {
       $('#inicialModal').modal('show');

@@ -138,7 +138,7 @@
           <div class="row">
             <div class="col-md-8 col-md-offset-2">
               <label><strong>Observación:</strong></label><br>
-              <textarea class="form-control" style="resize:none" rows="5" id="observacion" readonly>{{asignatura.observacion | capitalize}}</textarea>
+              <textarea class="form-control" style="resize:none" rows="5" id="observacion" ng-repeat="idea in historialIdea" readonly>{{idea.observacion | capitalize}}</textarea>
             </div>
           </div><br>
           <div class="form-group">
