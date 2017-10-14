@@ -40,7 +40,8 @@
         <tr>
           <td>{{inscripcionActual.materia.codigo}}</td>
           <td>
-            <input MAXLENGTH="2" style="resize:none;height:25px;width:100%;border:0" type="number" ng-model="grupo"  max="99" min="1" required placeholder="Digite el grupo de Mares."></input>
+            <input pattern=".{2,}" required title="minimo 2 caracteres" maxlength="2">
+            <input style="resize:none;height:25px;width:100%;border:0" type="number" ng-model="grupo"  max="99" min="1" MAXLENGTH="2" required placeholder="Digite el grupo de Mares."></input>
           </td>
           <td>{{inscripcionActual.materia.nombre}}</td>
         </tr>
