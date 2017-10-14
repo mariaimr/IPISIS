@@ -17,16 +17,16 @@
       <table class="table table-hover table-striped">
         <thead>
           <tr>
-            <!--<th class="text-center">CÓDIGO</th>-->
             <th class="text-center">NOMBRE</th>
+            <th class="text-center">CÓDIGO</th>
             <th class="text-center" style="min-width: 100px">DESCRIPCIÓN</th>
           </tr>
         </thead>
         <tbody class="pre-scrollable ">
           <!-- -->
           <tr ng-repeat="idea in ideas | filter: buscar | orderBy:'titulo'">
-            <!--<td class="text-center">{{idea.id}}</td>-->
             <td class="text-center">{{idea.titulo | uppercase}} </td>
+            <td class="text-center">{{idea.id}}</td>
             <td class="filterable-cell text-center desc">
               <label class="item" title="Mostrar descripción" data-toggle="modal"
               data-target="#myModal" ng-click="mostrar(idea)">

@@ -11,8 +11,8 @@
   <table class="table">
     <thead>
       <tr>
-        <!--<th>ID</th>-->
         <th>NOMBRE</th>
+        <th>ID</th>
         <th style="width:250px">ASIGNATURA</th>
         <th>TUTOR</th>
         <th></th>
@@ -21,11 +21,11 @@
 
     <tbody>
       <tr ng-repeat="oferta in ofertas | filter:buscar |orderBy:'idea.titulo'" ng-if="oferta.inscripciones[0].historialInscripcion.length != 1">
-        <!--<td><b>{{oferta.id}}</b></td>-->
         <td>{{oferta.idea.titulo}}</td>
         <td>
           <p ng-repeat="asignatura in oferta.idea.asignaturas">{{asignatura.nombre}}</p>
         </td>
+        <td><b>{{oferta.id}}</b></td>
         <td>{{oferta.profesor.nombre || 'No asignado'}}</td>
         <td><a class="btn btn-success" data-toggle="modal" data-target="#myModal" ng-click="seleccionarOferta(oferta)" href="">Detalles</a></td>
       </tr>
