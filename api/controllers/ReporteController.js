@@ -49,14 +49,13 @@ module.exports= {
       width:30
     }
   ];
-
+  
     conf.rows = [
       ['123-1', 'Ipisis 1', ["Neyder","Maria"], ["correo1","correo2"], ["tutor1","tutor2"], ["correo1","correo2"],"acepta","...","2017/08/06"],
       ['123-2','Ipisis 2', ["Neyder","Maria"],  ["correo1","correo2"], ["tutor1","tutor2"], ["correo1","correo2"],"acepta","...","2017/08/06"],
       ['123-3', 'Ipisis 3', ["Neyder","Maria"], ["correo1","correo2"], ["tutor1","tutor2"], ["correo1","correo2"],"acepta","...","2017/08/06"],
       ['123-4', 'Ipisis 4', ["Neyder","Maria"], ["correo1","correo2"], ["tutor1","tutor2"], ["correo1","correo2"],"acepta","...","2017/08/06"]
     ];
-  console.log(conf);
   var result = nodeExcel.execute(conf);
 
   res.setHeader('Content-Type', 'application/vnd.openxmlformats');

@@ -70,7 +70,7 @@ module.exports = {
 
     accion = req.param('accion');
     if (!accion) {
-      return res.badRequest({code: 1, msg:'Debe ingresar una acción.'});
+      return res.badRequest({code: 1, msg:'Debe ingresar una acción y más.'});
     }
 
     inscripcionId = req.param('inscripcionId');
@@ -83,13 +83,13 @@ module.exports = {
       return res.badRequest({code: 1, msg:'Debe ingresar una observación.'});
     }
 
-    grupo_Mares = req.param('grupoMares');
-    if (!grupo_Mares) {
-      return res.badRequest({code: 1, msg:'Debe ingresar un grupo.'});
-    }
 
     if (accion == 1) {
       estado = 'ACEPTADA';
+      grupo_Mares = req.param('grupoMares');
+      if (!grupo_Mares) {
+        return res.badRequest({code: 1, msg:'Debe ingresar un grupo.'});
+      }
     }
     else if (accion == 2) {
       estado = 'RECHAZADA';
