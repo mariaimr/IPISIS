@@ -28,6 +28,7 @@
     "angular-messages": "~1.5.8",
     "bootstrap-select": "~1.11.2",
     "bootstrap-multiselect": "~0.9.13",
-    "angular-confirm": "angular1-confirm#^1.1.0"
+    "angular-confirm": "angular1-confirm#^1.1.0",
+    "angular-file-saver": "^1.1.3"
   }
 }
