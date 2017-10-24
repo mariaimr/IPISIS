@@ -10,10 +10,11 @@ function ($scope, $state, JefeService,FileSaver, Blob) {
   $scope.descargarReporte();
 
   $scope.exportarExcel= function() {
-      let blob= new Blob([document.getElementById('exportable').innerHTML],{
-        encoding: "UTF-8" ,type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet; charset= UTF-8"
+      let header = '<meta http-equiv="content-type" content="application/vnd.ms-excel; charset=UTF-8">';
+      let blob= new Blob([header + document.getElementById('exportable').innerHTML],{
+        encoding: "UTF-16" ,type: "data:application/vnd.ms-excel;charset=UTF-8"
       });
-      FileSaver.saveAs(blob,'report_file.xlsx');
+      FileSaver.saveAs(blob,'report_file.xls');
   }
 
 }])
