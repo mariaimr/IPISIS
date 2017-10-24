@@ -301,7 +301,15 @@ function($stateProvider, $urlRouterProvider, ROLES){
 	})
 	.state("generarReporte",{
 		url:"/generar-reporte",
-		controller:"GenerarReporteController"
+		templateUrl: "templates/private/jefe/reporte.html",
+		controller:"GenerarReporteController",
+		data: {
+			permissions: {
+				only: ROLES.JEFE,
+				except: ROLES.ANON,
+				redirectTo: 'signin'
+			}
+		}
 	});
 
 	$urlRouterProvider.otherwise('/');
