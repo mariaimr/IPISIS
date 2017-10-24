@@ -4,6 +4,15 @@ function ($scope, $state, JefeService,FileSaver, Blob) {
 
   $scope.descargarReporte= function() {
     JefeService.getReporte().then(function(datos) {
+        datos.data.forEach(function(item) {
+          for (var clave in item){
+              if (item.hasOwnProperty(clave)) {
+                if (clave==="fecha_actualizacion") {
+                  item[clave]= item[clave].substring(0,10);
+                }
+              }
+            }
+      });
         $scope.reporte = datos.data;
     });
   }
