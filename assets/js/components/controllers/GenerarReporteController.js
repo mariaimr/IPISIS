@@ -8,7 +8,7 @@ function ($scope, $state, JefeService,FileSaver, Blob) {
           for (var clave in item){
               if (item.hasOwnProperty(clave)) {
                 if (clave==="fecha_actualizacion") {
-                  item[clave]= item[clave].substring(0,20);
+                 item[clave]= item[clave].substring(0,19).replace('T',' ');
                 }
               }
             }
