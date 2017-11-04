@@ -15,7 +15,6 @@ ipisis.controller('OfertarIdeasController', ["$scope", 'IdeaService', "ProfesorS
       });
 
     $scope.mostrar = function(idea, index) {
-      console.log(idea);
       $scope.id = idea.id;
       $scope.titulo = idea.titulo;
       $scope.descripcion = idea.descripcion;

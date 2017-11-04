@@ -149,20 +149,14 @@ module.exports = {
 		if (semestreInicio >= semestreCierre) {
 			return res.badRequest({code: 2, msg: 'La fecha de cierre de semestre no puede ser mayor a la fecha de inicio.'})
 		}
-		semestreInicio = TimezoneService.getDate({timestamp: semestreInicio, offset: offset});
-		semestreCierre = TimezoneService.getDate({timestamp: semestreCierre, offset: offset});
-
 
 		if (inscripcionInicio >= inscripcionCierre) {
 			return res.badRequest({code: 2, msg: 'La fecha de cierre de inscripción no puede ser mayor a la fecha de inicio.'})
 		}
-		inscripcionInicio = TimezoneService.getDate({timestamp: inscripcionInicio, offset: offset});
-		inscripcionCierre = TimezoneService.getDate({timestamp: inscripcionCierre, offset: offset});
 
 		if (inscripcionInicio >= semestreCierre) {
 			return res.badRequest({code: 2, msg: 'La fecha de inscripcion no puede ser despues de la fecha de cierre del semestre.'})
 		}
-
 		Semestre.findAll({
 			where: {
 				codigo: {$not: codigo},
